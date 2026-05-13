@@ -33,12 +33,22 @@ While creating a subclass of a Qt class, always call super.__init__() to allow t
 
 
 
-QtWidget classes:
+QtWidget:
 QApplication: application handler, holds the event loop of application
 QWidget: UI element
 QPushButton: just a button, can be initialized with text.
 
 
+QtCore:
+QSize: stores width and height parameters
+
+
 Window Methods:
 .setWindowTitle() changes the title of the main window.
 .setCentralWidget(<widget>) places a widget at the middle of the window. by default it takes the window itself.
+
+
+All Widget Methods:
+.setFixedSize(<QSize>) will create a fixed window size.
+.setMinimumSize(<QSize>)
+.setMaximumSize(<QSize>)

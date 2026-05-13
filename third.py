@@ -1,3 +1,6 @@
+# Using QMainWindow in PyQt6
+
+
 import sys
 
 from PyQt6.QtCore import QSize, Qt
@@ -10,7 +13,12 @@ class MainWindow(QMainWindow):
         super().__init__()
 
         self.setWindowTitle("My App")
+
         button = QPushButton("Press Me!")
+
+        # self.setFixedSize(QSize(400, 300))
+        self.setMinimumSize(QSize(200, 200))
+        self.setMaximumSize(QSize(600, 600))
 
         # Set the central widget of the Window
         self.setCentralWidget(button)
