@@ -1,1 +1,0 @@
-# Learning Python UIs thorough pythongui.com
