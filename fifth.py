@@ -1,5 +1,8 @@
-"""Application that contains a button that changes the window title"""
-# To demonstrate how a chain of signals can be fired and understand how to manipulate them.
+"""
+Application that contains a button that changes the window title
+To demonstrate how a chain of signals can be fired and understand how to manipulate them.
+"""
+
 
 import sys
 

@@ -1,4 +1,5 @@
 # PyQt6 Signals, Slots and Events
+"""This application deals with QPushButton signals and states"""
 
 
 import sys

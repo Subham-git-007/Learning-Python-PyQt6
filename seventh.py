@@ -1,3 +1,6 @@
+"""This program deals with Custom Mouse Events."""
+
+
 import sys
 
 from PyQt6.QtCore import Qt
