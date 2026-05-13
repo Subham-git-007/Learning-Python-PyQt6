@@ -1,0 +1,28 @@
+# My notes for pythonguis.com
+
+
+# Creating your first app with PyQt6
+
+QtWidgets contains a bunch of classes useful for creating an application.
+QApplication: application handler, holds the event loop of application
+QWidget: UI element
+
+The main modules for Qt are QtWidgets, QtGui and QtCore.
+
+app = QApplication(sys.argv)    # an instance of QApplication passing sys.argv(a list of command line arguments)
+*import sys if you need sys.argv
+
+In Qt, all top level widgets are windows
+
+We need to call .show() for a window to be visible/ make it appear during application execution.
+
+A window:
+1. Holds application's UI
+2. Every application needs at least one but can have more
+3. Application exits when the last window is closed
+
+Event loop: When the user interacts with our application, an event is generated and placed on the event queue.
+The queue passes events to the even loop, if a waiting event is found, it is passed to the event handler.
+Control passes back to the even loop to wait for more events and the process continues.
+There can be only one running event loop per application.
+QApplication class holds the Qt event loop.
