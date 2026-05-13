@@ -37,9 +37,10 @@ QtWidget:
 QApplication: application handler, holds the event loop of application
 QWidget: UI element
 QPushButton: just a button, can be initialized with text.
+QLabel: text display
+QLineEdit: text input box
+QVBoxLayout: organizing widgets vertically
 
-
-QtCore:
 QSize: stores width and height parameters
 
 
@@ -48,11 +49,16 @@ Window Methods:
 .setCentralWidget(<widget>) places a widget at the middle of the window. by default it takes the window itself.
 
 
-All Widget Methods:
+All Widget Methods/Slots:
 .setFixedSize(<QSize>) will create a fixed window size.
 .setMinimumSize(<QSize>)
 .setMaximumSize(<QSize>)
-
+.setCheckable gives widgets like QPushButton on and off states (True/False).
+.setChecked can set the initial state of the widget(True/False)
+.setEnabled(<bool>)/.setDisabled(<bool>)
+.setText(<string>) will change the text in widgets
+.setLayout(<layout_object>) takes a layout object as parameter and lays out the widgets within the window accordingly
+.setMouseTracking(True)
 
 
 # PyQt6 Signals, Slots and Events
@@ -71,10 +77,20 @@ Basic Qt Signals:
                             within the button. released signal does not send checked state argument.
 3. QMainWindow.windowTitleChanged   -> triggered when the title of the window is changed.
                                         (only if new title is different from old title)
+4. QLineEdit.textChanged    -> triggered when text is changed in the input box, connect passes the text as argument
 
 
+# Events
+-> every interaction that the user has with a Qt application. Qt represents these using event objects.
+-> event objects are passed to specific event handlers on the widget where the interaction occurred.
+-> Defining custom event handlers, defined just like any other method, but name is specific for the type of event.
+-> Eg: QMouseEvent events are created for each and very mouse movement and button click on a widget.
+-> Intercept pre-defined events by sub-classing and overriding the handler methods on the class, on the subclass.
 
-Basic Mehods:
-1. .setCheckable gives widgets like QPushButton on and off states (True/False).
-2. .setChecked can set the initial state of the widget(True/False)
-3. .setEnabled(<bool>)/.setDisabled(<bool>)
+
+Most widgets contain MOUSE event handlers such as mouseMoveEvent, mousePressEvent, mouseReleaseEvent,
+mouseDoubleClickEvent. We can build custom interaction by overriding these methods from super class by calling
+them in subclass and giving them custom functionality.
+
+Initially, mouseMoveEvent is only triggered when LMB is held down. This can be changed by calling
+.setMouseTracking(True) for both window and widget.
