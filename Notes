@@ -4,8 +4,6 @@
 # Creating your first app with PyQt6
 
 QtWidgets contains a bunch of classes useful for creating an application.
-QApplication: application handler, holds the event loop of application
-QWidget: UI element
 
 The main modules for Qt are QtWidgets, QtGui and QtCore.
 
@@ -26,3 +24,21 @@ The queue passes events to the even loop, if a waiting event is found, it is pas
 Control passes back to the even loop to wait for more events and the process continues.
 There can be only one running event loop per application.
 QApplication class holds the Qt event loop.
+
+The .exec() method of QApplication starts the event loop.
+
+We define subclass of MainWindow(QMainWindow) because we want to create custom windows.
+
+While creating a subclass of a Qt class, always call super.__init__() to allow the object to be set up.
+
+
+
+QtWidget classes:
+QApplication: application handler, holds the event loop of application
+QWidget: UI element
+QPushButton: just a button, can be initialized with text.
+
+
+Window Methods:
+.setWindowTitle() changes the title of the main window.
+.setCentralWidget(<widget>) places a widget at the middle of the window. by default it takes the window itself.
