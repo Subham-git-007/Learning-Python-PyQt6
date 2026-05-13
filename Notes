@@ -52,3 +52,29 @@ All Widget Methods:
 .setFixedSize(<QSize>) will create a fixed window size.
 .setMinimumSize(<QSize>)
 .setMaximumSize(<QSize>)
+
+
+
+# PyQt6 Signals, Slots and Events
+Signals: notifications emitted by widgets when something happens.
+-> notifying when something happens, sending data to provide additional context to what happened.
+-> built-in and custom signals
+
+Slots: signal receivers. Any function can be used as a slot by connecting a signal to it.
+
+We use .connect to connect a widget's signal to a slot
+
+Basic Qt Signals:
+1. QPushButton.clicked -> triggered when mouse clicks the button and releases the click while it is still within
+                            the button. clicked signal sends a checked state argument
+2. QPushButton.released -> triggered when mouse clicks the button but it does not matter whether the release happened
+                            within the button. released signal does not send checked state argument.
+3. QMainWindow.windowTitleChanged   -> triggered when the title of the window is changed.
+                                        (only if new title is different from old title)
+
+
+
+Basic Mehods:
+1. .setCheckable gives widgets like QPushButton on and off states (True/False).
+2. .setChecked can set the initial state of the widget(True/False)
+3. .setEnabled(<bool>)/.setDisabled(<bool>)
